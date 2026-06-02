@@ -1,8 +1,16 @@
+import 'package:calculator/modules/theme_module.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:calculator/screen/calculator_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+      MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (context)=> ThemeProvider(),)
+        ],
+          child: const MyApp()
+      ));
 }
 
 class MyApp extends StatelessWidget {
@@ -10,14 +18,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false, // hides the debug banner
-      title: 'Calculator',
-      theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
-        primarySwatch: Colors.blue,
+    return Consumer<ThemeProvider>(
+      builder: (context, themeProvider, child)=> MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: themeProvider.currentTheme,
+        home: CalculatorScreen(),
       ),
-      home: const CalculatorScreen(), // starting screen of your app
     );
   }
 }

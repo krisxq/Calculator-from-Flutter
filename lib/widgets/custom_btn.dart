@@ -23,6 +23,7 @@ class _CustomBtnState extends State<CustomBtn> {
 
   @override
   Widget build(BuildContext context) {
+    ColorScheme colorScheme = Theme.of(context).colorScheme;
     return GestureDetector(
       onTapDown: (_){
         clickEffectNotifier.value = false;
@@ -40,7 +41,7 @@ class _CustomBtnState extends State<CustomBtn> {
           width: 80,
           alignment: Alignment.center,
           decoration: BoxDecoration(
-              color: widget.isEqualBtn? AppColors.blueColor : AppColors.greyWhiteColor,
+              color: widget.isEqualBtn? colorScheme.primary : colorScheme.secondary,
               borderRadius: BorderRadius.circular(24),
               boxShadow: value ? unClick() : clickEffect()
           ),

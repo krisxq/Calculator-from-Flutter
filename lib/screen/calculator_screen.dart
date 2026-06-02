@@ -13,6 +13,7 @@ class CalculatorScreen extends StatefulWidget {
 class _CalculatorScreenState extends State<CalculatorScreen> {
   @override
   Widget build(BuildContext context) {
+    ColorScheme colorScheme = Theme.of(context).colorScheme;
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -30,39 +31,39 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      CustomBtn(value: 'AC', textColor: AppColors.blueColor,),
-                      CustomBtn(value: '7',),
-                      CustomBtn(value: '4',),
-                      CustomBtn(value: '1',),
-                      CustomBtn(value: '%',),
+                      CustomBtn(value: 'AC', textColor: colorScheme.primary,),
+                      CustomBtn(value: '7', textColor: colorScheme.tertiary,),
+                      CustomBtn(value: '4', textColor: colorScheme.tertiary,),
+                      CustomBtn(value: '1', textColor: colorScheme.tertiary,),
+                      CustomBtn(value: '%', textColor: colorScheme.tertiary,),
                     ],
                   ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      CustomBtn(value: '/', textColor: AppColors.blueColor,),
-                      CustomBtn(value: '8',),
-                      CustomBtn(value: '5',),
-                      CustomBtn(value: '2',),
-                      CustomBtn(value: '0',),
+                      CustomBtn(value: '/', textColor: colorScheme.primary,),
+                      CustomBtn(value: '8', textColor: colorScheme.tertiary,),
+                      CustomBtn(value: '5', textColor: colorScheme.tertiary,),
+                      CustomBtn(value: '2', textColor: colorScheme.tertiary,),
+                      CustomBtn(value: '0', textColor: colorScheme.tertiary,),
                     ],
                   ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      CustomBtn(value: 'x', textColor: AppColors.blueColor,),
-                      CustomBtn(value: '9',),
-                      CustomBtn(value: '6',),
-                      CustomBtn(value: '3',),
-                      CustomBtn(value: '.',),
+                      CustomBtn(value: 'x', textColor: colorScheme.primary,),
+                      CustomBtn(value: '9', textColor: colorScheme.tertiary,),
+                      CustomBtn(value: '6', textColor: colorScheme.tertiary,),
+                      CustomBtn(value: '3', textColor: colorScheme.tertiary,),
+                      CustomBtn(value: '.', textColor: colorScheme.tertiary,),
                     ],
                   ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      CustomBtn(value: 'Clr', textColor: AppColors.blueColor,),
-                      CustomBtn(value: '-', textColor: AppColors.blueColor,),
-                      CustomBtn(value: '+',textColor: AppColors.blueColor,),
+                      CustomBtn(value: 'Clr', textColor: colorScheme.primary,),
+                      CustomBtn(value: '-', textColor: colorScheme.primary,),
+                      CustomBtn(value: '+',textColor: colorScheme.primary,),
                       CustomBtn(
                         value: '=',
                         textColor: AppColors.whiteColor,
