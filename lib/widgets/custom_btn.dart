@@ -3,7 +3,15 @@ import 'package:calculator/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 
 class CustomBtn extends StatefulWidget {
-  const CustomBtn({super.key});
+  final bool isEqualBtn;
+  final String value;
+  final Color textColor;
+  const CustomBtn({
+    super.key,
+    this.isEqualBtn = false,
+    required this.value,
+    this.textColor = Colors.black
+  });
 
   @override
   State<CustomBtn> createState() => _CustomBtnState();
@@ -28,15 +36,15 @@ class _CustomBtnState extends State<CustomBtn> {
         valueListenable: clickEffectNotifier,
         builder: (context, value, child) => AnimatedContainer(
           duration: Duration(milliseconds: 250),
-          height: 100,
-          width: 100,
+          height: widget.isEqualBtn ? 180 : 80,
+          width: 80,
           alignment: Alignment.center,
           decoration: BoxDecoration(
-              color: AppColors.greyWhiteColor,
+              color: widget.isEqualBtn? AppColors.blueColor : AppColors.greyWhiteColor,
               borderRadius: BorderRadius.circular(24),
               boxShadow: value ? unClick() : clickEffect()
           ),
-          child: CustomText(value: '12', color: AppColors.blackColor),
+          child: CustomText(value: widget.value, color: widget.textColor),
         ),
       ),
     );
