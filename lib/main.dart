@@ -1,3 +1,4 @@
+import 'package:calculator/modules/result_value_model.dart';
 import 'package:calculator/modules/theme_module.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -7,7 +8,9 @@ void main() {
   runApp(
       MultiProvider(
         providers: [
-          ChangeNotifierProvider(create: (context)=> ThemeProvider(),)
+          ChangeNotifierProvider(create: (context)=> ThemeProvider(),),
+          ChangeNotifierProvider(
+            create: (_) => ResultValueProvider(resultView: "", detailView: "")),
         ],
           child: const MyApp()
       ));

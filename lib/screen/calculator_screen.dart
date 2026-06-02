@@ -16,7 +16,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
     ColorScheme colorScheme = Theme.of(context).colorScheme;
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(4.0),
         child: Column(
           children: [
             Expanded(
