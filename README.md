@@ -6,9 +6,9 @@ A clean, themeable calculator app built with Flutter — featuring a smooth day/
 
 ## 📱 Screenshots
 
-| Light Mode | Dark Mode |
-|------------|-----------|
-| ![Light](screenshots/light.png) | ![Dark](screenshots/dark.png) |
+| Light Mode                      | Dark Mode                     |
+|---------------------------------|-------------------------------|
+| ![Light](images/lightTheme.png) | ![Dark](images/darkTheme.png) |
 
 ---
 
